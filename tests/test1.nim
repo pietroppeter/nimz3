@@ -201,7 +201,7 @@ suite "z3":
       s.check_model:
         echo model
 
-when false: # This test fails with never versions of Z3.
+when true: # This test fails with never versions of Z3.
 
   test "optimize":
     # Pablo buys popsicles for his friends. The store sells single popsicles
@@ -220,8 +220,8 @@ when false: # This test fails with never versions of Z3.
       s.assert a == 8
       s.maximize n
       echo s
-      if s.check() == Z3_L_TRUE:
-        echo s.get_model()
+      echo s.check()
+      echo s.get_model()
 
 # vim: ft=nim
 
